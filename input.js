@@ -19,6 +19,11 @@ const setupInput = function(conn) {
       conn.write('Move: right');
     }
   });
+  stdin.on('data', (key) => {
+    if (key === 'p') {
+      conn.write('Say: HELLO FREN');
+    }
+  });
   //Exit command-- ctl + c
   stdin.on('data', (key) => {
     if (key === '\u0003') {
